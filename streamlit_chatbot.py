@@ -81,8 +81,8 @@ with st.sidebar:
         "Choose Claude model:",
         [
             "claude-sonnet-4-20250514",
-            "claude-opus-4-1-20250805",
-            "claude-opus-3-sonnet-20250729"
+            "claude-opus-4-20241229",
+            "claude-opus-3-5-sonnet-20241022"
         ],
         help="Different models have different capabilities and costs"
     )
