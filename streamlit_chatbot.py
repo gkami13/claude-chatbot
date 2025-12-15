@@ -82,7 +82,7 @@ with st.sidebar:
         [
             "claude-sonnet-4-20250514",
             "claude-opus-4-20241229",
-            "claude-opus-3-5-sonnet-20241022"
+            "claude-3-5-sonnet-20241022"
         ],
         help="Different models have different capabilities and costs"
     )
@@ -165,6 +165,12 @@ if user_input:
 
                 # Display response
                 st.write(claude_response)
+
+                # Add assistant response to history
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": claude_response
+                })
 
         except anthropic.APIConnectionError as e:
             st.error("Could not connect to Claude. Check your internet connection.")
