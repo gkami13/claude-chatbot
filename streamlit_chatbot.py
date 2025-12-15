@@ -191,12 +191,4 @@ if user_input:
             st.session_state.messages.pop()
             st.stop()
         
-        # Add assistant response to history
-        st.session_state.messages.append({
-            "role": "assistant",
-            "content": claude_response
-        })
-
-        # Rerun to update
-        st.rerun()
-        st.rerun()
+   
