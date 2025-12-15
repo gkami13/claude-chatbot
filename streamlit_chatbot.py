@@ -66,9 +66,7 @@ with st.sidebar:
     model = st.selectbox(
         "Choose Claude model:",
         [
-            "claude-sonnet-4-20250514",
-            "claude-opus-4-20241229",
-            "claude-3-5-sonnet-20241022"
+            "claude-sonnet-4-20250514"
         ],
         help="Different models have different capabilities and costs"
     )
