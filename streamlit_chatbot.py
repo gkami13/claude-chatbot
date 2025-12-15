@@ -26,20 +26,6 @@ st.set_page_config(page_title="Claude Chatbot", page_icon="🤖", layout="center
 st.title("🤖 Claude Chatbot")
 st.caption("Powered by Claude Sonnet 4")
 
-#Welcome message
-if len(st.session_state.messages) == 0:
-    with st.chat_message("assistant"):
-        st.write("""
-        ■ Hello! I'm Claude, an AI assistant created by Anthropic.
-        I can help you with:
-        - Answering questions
-        - Writing and editing
-        - Analysis and research
-        - Coding and debugging
-        - Creative projects
-        Just type your message below to get started!
-        """)
-
 # Sidebar with controls
 with st.sidebar:
     st.header("Controls")
@@ -67,7 +53,7 @@ with st.sidebar:
     st.subheader("System Prompt")
     system_prompt = st.text_area(
         "Set Claude's behavior:",
-        value="You are a helpful AI Assistant.",
+        value=st.session_state.system_prompt,  # ← Change this line
         height=100,
         help="This tells Claude how to behave"
     )
